@@ -126,9 +126,7 @@ p {
 .contacts .link {
   padding: 32px 0;
 
-  transition-property: color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--transition-link);
 }
 .main-nav .link {
   position: relative;
@@ -156,7 +154,7 @@ p {
 .link.current::after {
   content: "";
   position: absolute;
-  bottom: -0.5px;
+  bottom: -1px;
 
   display: block;
   width: 100%;
@@ -218,7 +216,7 @@ p {
   color: var(--primary-white-color);
   background-color: var(--logo-primary-color);
 
-  transition-property: backgraund-color var(--transition-link);
+  transition: backgraund-color var(--transition-link);
 }
 .hero .btn:hover,
 .hero .btn:focus {
@@ -294,9 +292,14 @@ p {
 .work .undertext {
   position: absolute;
   width: 100%;
+  height: 70px;
   bottom: 0;
-  padding-top: 27px;
-  padding-bottom: 27px;
+
+ display: flex;
+ align-items: center;
+ justify-content: center;
+
+  font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
   text-align: center;
@@ -358,17 +361,19 @@ p {
   height: 44px;
 
   border-radius: 50%;
-  color: var(--icon-body-color);
+}
+.team .social-link {
+   color: var(--icon-body-color);
 
-  transition-property: color var(--transition-link),
+  transition: color var(--transition-link),
     backgraund-color var(--transition-link);
 }
-.social-link:hover,
-.social-link:focus {
+.team .social-link:hover,
+.team .social-link:focus {
   color: var(--primary-white-color);
   background-color: var(--logo-primary-color);
 }
-.social-icon {
+.team .social-icon {
   fill: currentColor;
 }
 /* ------------Our clients------------- */
@@ -389,7 +394,7 @@ p {
   border: 1px solid var(--icon-body-color);
   border-radius: 4px;
 
-  transition-property: color var(--transition-link);
+  transition-property: color var(--transition-link), border-color var(--transition-link);
 }
 .client-link:hover,
 .client-link:focus {
@@ -439,15 +444,21 @@ p {
   font-weight: 700;
   color: var(--primary-white-color);
 }
-
 .footer-social-link {
   color: var(--primary-white-color);
   background-color: var(--icon-footer-bgc);
+
+  transition: backgraund-color var(--transition-link);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
+  color: var(--primary-white-color);
   background-color: var(--logo-primary-color);
 }
+.footer-icon .social-icon {
+  fill: currentColor;
+}
+
 /* ----------Page Portfolio-------------- */
 
 /* --------------Button menu------------ */
@@ -589,8 +600,8 @@ p {
 
 .modal-btn {
   position: absolute;
-  top: 17px;
-  right: 17px;
+  top: 8px;
+  right: 8px;
 
   padding: 0;
   display: inline-flex;
